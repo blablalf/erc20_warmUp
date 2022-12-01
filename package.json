@@ -18,5 +18,18 @@
   "bugs": {
     "url": "https://github.com/blablalf/erc20_warmUp/issues"
   },
-  "homepage": "https://github.com/blablalf/erc20_warmUp#readme"
+  "homepage": "https://github.com/blablalf/erc20_warmUp#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.4.1",
+    "@truffle/hdwallet-provider": "^2.1.2",
+    "dotenv": "^16.0.3",
+    "truffle": "^5.6.7"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "ethereumjs-wallet": "^1.0.2",
+    "mocha": "^10.1.0"
+  }
 }
