@@ -9,13 +9,6 @@
 				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
-			},
-			{
-				"inputs": [],
-				"name": "doEverything",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -93,18 +86,18 @@
 			]
 		},
 		"contracts/erc.sol": {
-			"keccak256": "0x6d63d3605d5b3904cca80540003cb53fa2a0f20ef2cedee9a8fe04dd8c01cad5",
+			"keccak256": "0xc021854509cd00f9b47e295990584d06431e795b5f072958f29822cac2fa1df4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://75046d95bd1a11b754a8ee9ad242a122a9ccaa95879c125c894835e31fb0fc4a",
-				"dweb:/ipfs/QmUN1vaowjsPrJXQRgKA9RfL8w8G4ZBGvZSehHmcrxe7vj"
+				"bzz-raw://c18dd203bad4e10fe5cf2db7cbe230dc65dad2d6f77663cdcdca340fe2b1fa4f",
+				"dweb:/ipfs/Qmdp4y9N8myGRozg4FFjA8YzQGGS5dn6Azyf9JV4r425PY"
 			]
 		},
 		"contracts/my_contract.sol": {
-			"keccak256": "0x4165fc17e859f69490811a72821e155d14faff18d0d1ecc52117392d10a89ed6",
+			"keccak256": "0xf0b7ed7dc78c093ef4a085ddefeec016c853d163279041f3eb43024381622f9f",
 			"urls": [
-				"bzz-raw://127b67af5a101be5491f61da455cbb5ce1e44246d206d292d24318dac8d07f0e",
-				"dweb:/ipfs/QmaMXxWTDBeSe5D5J2J42zm8qBGnSD7YHB6xLk94C2Y4ut"
+				"bzz-raw://7749fcdbefde23d937a21b926b45e5138eb1fc7ea17bc23f93eda73f06619ca6",
+				"dweb:/ipfs/QmYRYru8ecsseVTNKva7UCuZbYrsfRumdRysDyhNrL5BMj"
 			]
 		}
 	},

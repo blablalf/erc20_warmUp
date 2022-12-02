@@ -3,11 +3,8 @@ import "./Evaluator.sol";
 import "./erc.sol";
 
 contract MyContract {
-    constructor() {
-    }
 
-    function doEverything()
-	public
+    constructor ()
 	{
         // Init
         Evaluator evaluator = Evaluator(payable(0x7C5629d850eCD1E640b1572bC0d4ac5210b38FA5));
@@ -21,6 +18,20 @@ contract MyContract {
         MyToken my_erc = new MyToken(ticker, supply);
         evaluator.submitExercice(my_erc);
 
-		//evaluator.ex3_testGetToken();
+        // Ex3
+		evaluator.ex3_testGetToken();
+
+        // Ex4
+		evaluator.ex4_testBuyToken();
+
+        // Ex5
+        my_erc.enableWhitelist();
+		evaluator.ex5_testDenyListing();
+
+        // Ex6
+        my_erc.addToWhitelist(address(evaluator));
+        evaluator.ex6_testAllowListing();
+
+        // Ex7
 	}
 }

@@ -94,6 +94,19 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "addressToAdd",
+						"type": "address"
+					}
+				],
+				"name": "addToWhitelist",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "owner",
 						"type": "address"
 					},
@@ -228,6 +241,13 @@
 			},
 			{
 				"inputs": [],
+				"name": "enableWhitelist",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getToken",
 				"outputs": [
 					{
@@ -279,7 +299,7 @@
 						"type": "bool"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -306,6 +326,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addressToRemove",
+						"type": "address"
+					}
+				],
+				"name": "removeFromWhitelist",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -523,11 +556,11 @@
 			]
 		},
 		"contracts/erc.sol": {
-			"keccak256": "0x6d63d3605d5b3904cca80540003cb53fa2a0f20ef2cedee9a8fe04dd8c01cad5",
+			"keccak256": "0x982f2029099afbab1db32dbe084afff27c95a0dc3bbccc6d44b934054ebb5bc8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://75046d95bd1a11b754a8ee9ad242a122a9ccaa95879c125c894835e31fb0fc4a",
-				"dweb:/ipfs/QmUN1vaowjsPrJXQRgKA9RfL8w8G4ZBGvZSehHmcrxe7vj"
+				"bzz-raw://255f50cbcdfeae28474c3f1fb65d2ca635c292865bcea687f58bc343cd375a95",
+				"dweb:/ipfs/QmSUJ9XBhGEgyvRAj3gNevfoNRHUzU48e1KneXNJP7Z8e8"
 			]
 		}
 	},
