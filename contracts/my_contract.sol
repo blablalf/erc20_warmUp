@@ -25,7 +25,7 @@ contract MyContract {
 		evaluator.ex4_testBuyToken();
 
         // Ex5
-        my_erc.enableWhitelist();
+        my_erc.toggleWhitelist();
 		evaluator.ex5_testDenyListing();
 
         // Ex6
@@ -33,5 +33,10 @@ contract MyContract {
         evaluator.ex6_testAllowListing();
 
         // Ex7
+        my_erc.removeFromWhitelist(address(evaluator));
+        evaluator.ex7_testDenyListing();
+
+        // Ex8
+        my_erc.toggleWhitelistTiers();
 	}
 }

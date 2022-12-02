@@ -9,7 +9,9 @@ import "./Evaluator.sol";
 contract MyToken is ERC20, Ownable, IExerciceSolution {
 
     mapping(address => bool) internal whitelist;
+    mapping(address => uint8) internal whitelistTiers;
     bool private whitelistActivated;
+    bool private whitelistTiersActivated;
 
     constructor(string memory ticker, uint supply) ERC20("blabla_erc20", ticker) {
         _mint(msg.sender, supply);
@@ -18,9 +20,8 @@ contract MyToken is ERC20, Ownable, IExerciceSolution {
     ///////////////
     // Whitelist //
     ///////////////
-
-    function enableWhitelist() public onlyOwner {
-        whitelistActivated = true;
+    function toggleWhitelist() public onlyOwner {
+        whitelistActivated = !whitelistActivated;
     }
     
     function addToWhitelist(address addressToAdd) public onlyOwner {
@@ -30,6 +31,19 @@ contract MyToken is ERC20, Ownable, IExerciceSolution {
     function removeFromWhitelist(address addressToRemove) public onlyOwner {
         whitelist[addressToRemove] = false;
     }
+    ///// END /////
+
+    /////////////////////
+    // Whitelist Tiers //
+    /////////////////////
+    function toggleWhitelistTiers() public onlyOwner {
+        whitelistTiersActivated = !whitelistTiersActivated;
+    }
+
+    function setWhitelistTier(address addressToSet, uint8 tier) public onlyOwner {
+        whitelistTiers[addressToSet] = tier;
+    }
+    //////// END ////////
 
     function symbol() public view override(IExerciceSolution, ERC20) returns (string memory) {}
     
@@ -44,7 +58,9 @@ contract MyToken is ERC20, Ownable, IExerciceSolution {
 
     function buyToken() external payable returns (bool) {
         // Checking only whitelisted can use this function if whitelist is enabled
-        if (whitelistActivated) require(isCustomerWhiteListed(msg.sender), "Not whitelisted");
+        if (whitelistActivated) {
+            require(isCustomerWhiteListed(msg.sender), "Not whitelisted");
+        }
         // price will be set at 0.0001 eth
         _mint(msg.sender, msg.value*1000);
         return true;
