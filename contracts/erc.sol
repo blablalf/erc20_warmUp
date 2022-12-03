@@ -37,6 +37,8 @@ contract MyToken is ERC20, Ownable, IExerciceSolution {
     // Whitelist Tiers //
     /////////////////////
     function toggleWhitelistTiers() public onlyOwner {
+        // If the purpose is to enable whitelist tiers, check that whitelist is enabled
+        if (!whitelistTiersActivated) require(whitelistActivated, "Enable whitelist first");
         whitelistTiersActivated = !whitelistTiersActivated;
     }
 
@@ -50,19 +52,30 @@ contract MyToken is ERC20, Ownable, IExerciceSolution {
     function getToken() external returns (bool){
         // Checking only teacher get free tokens
         require(msg.sender == 0x7C5629d850eCD1E640b1572bC0d4ac5210b38FA5, "Only Teacher Evaluator contract can call this endpoint");
+
         // Checking only whitelisted can use this function if whitelist is enabled
         if (whitelistActivated) require(isCustomerWhiteListed(msg.sender), "Not whitelisted");
+
         _mint(msg.sender, 10**decimals());
+
         return true;
     }
 
     function buyToken() external payable returns (bool) {
+        uint8 price_multiplier = 1;
+
         // Checking only whitelisted can use this function if whitelist is enabled
         if (whitelistActivated) {
             require(isCustomerWhiteListed(msg.sender), "Not whitelisted");
+            if (whitelistTiersActivated) {
+                require(whitelistTiers[msg.sender] != 0, "Whitelist tiers enabled but not defined for this address");
+                if (whitelistTiers[msg.sender] == 2) price_multiplier = 2;
+            }
         }
+
         // price will be set at 0.0001 eth
-        _mint(msg.sender, msg.value*1000);
+        _mint(msg.sender, msg.value*1000*price_multiplier);
+
         return true;
     }
 
@@ -70,7 +83,9 @@ contract MyToken is ERC20, Ownable, IExerciceSolution {
         return whitelist[customerAddress];
     }
 
-  function customerTierLevel(address customerAddress) external returns (uint256){ return 0;}
+    function customerTierLevel(address customerAddress) external view returns (uint256){
+        return whitelistTiers[customerAddress];
+    }
   
 
 }

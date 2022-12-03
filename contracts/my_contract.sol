@@ -1,14 +1,21 @@
 pragma solidity ^0.8.9;
 import "./Evaluator.sol";
+import "./IAllInOneSolution.sol";
 import "./erc.sol";
 
-contract MyContract {
+contract MyContract is IAllInOneSolution {
+    Evaluator evaluator;
 
-    constructor ()
-	{
+    constructor() {
         // Init
-        Evaluator evaluator = Evaluator(payable(0x7C5629d850eCD1E640b1572bC0d4ac5210b38FA5));
+        evaluator = Evaluator(payable(0x7C5629d850eCD1E640b1572bC0d4ac5210b38FA5));
+    }
 
+    function allIn() public {
+        evaluator.ex10_allInOne();
+    }
+
+    function completeWorkshop() external {
         // Ex1
         evaluator.ex1_getTickerAndSupply();
 
@@ -38,5 +45,12 @@ contract MyContract {
 
         // Ex8
         my_erc.toggleWhitelistTiers();
-	}
+        my_erc.addToWhitelist(address(evaluator));
+        my_erc.setWhitelistTier(address(evaluator), 1);
+        evaluator.ex8_testTier1Listing();
+
+        // Ex9
+        my_erc.setWhitelistTier(address(evaluator), 2);
+        evaluator.ex9_testTier2Listing();
+    }
 }

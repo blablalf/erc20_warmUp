@@ -199,7 +199,7 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -581,11 +581,11 @@
 			]
 		},
 		"contracts/erc.sol": {
-			"keccak256": "0x0a0f341e2a07ec2d3e799961d50371e8c14a03e16cfb2044913c5dc180e9b20c",
+			"keccak256": "0x62ebace86eaa3f0f26cc857e6861c3eac3c7d06c1bac7d31fa522f22a2edb449",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6b80c6f1cb29fdcebf7b60f8811176a6d2f9954519f5b0e2303834760e5bc836",
-				"dweb:/ipfs/QmY3zusnME8hPrtC4gkD3WaBB8ycVQE7qr18uUJhZB4tDt"
+				"bzz-raw://236b9a4b5ca686c5365880641c4bc4043fccdc3a120c751fa121675f9590f43b",
+				"dweb:/ipfs/QmWaUnbgdyg6B6RyDABDnDfzoVbHWDquzz34hHb4Aa6Piq"
 			]
 		}
 	},

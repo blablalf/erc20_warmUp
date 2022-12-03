@@ -86,18 +86,18 @@
 			]
 		},
 		"contracts/erc.sol": {
-			"keccak256": "0xc021854509cd00f9b47e295990584d06431e795b5f072958f29822cac2fa1df4",
+			"keccak256": "0x2dacde872702a13d90e11d5a2232c82281acdeedc63599ad6f3f508407811d3a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c18dd203bad4e10fe5cf2db7cbe230dc65dad2d6f77663cdcdca340fe2b1fa4f",
-				"dweb:/ipfs/Qmdp4y9N8myGRozg4FFjA8YzQGGS5dn6Azyf9JV4r425PY"
+				"bzz-raw://c34c14832245daa035973a2799e757557a68dc01670268341b65814218898cf6",
+				"dweb:/ipfs/QmTVt6R7hRiJppkzygJnLhx2YhAEmUfq4AwiDjU7Zt9WER"
 			]
 		},
 		"contracts/my_contract.sol": {
-			"keccak256": "0xf0b7ed7dc78c093ef4a085ddefeec016c853d163279041f3eb43024381622f9f",
+			"keccak256": "0x376dc62f18e922f534147eda7a5a38d35def615c040b39d49771f5bd7e406fa7",
 			"urls": [
-				"bzz-raw://7749fcdbefde23d937a21b926b45e5138eb1fc7ea17bc23f93eda73f06619ca6",
-				"dweb:/ipfs/QmYRYru8ecsseVTNKva7UCuZbYrsfRumdRysDyhNrL5BMj"
+				"bzz-raw://fb09cabd896e06effdb9022ecefd08fe0d5ed8adf8b216c3eec02e29d25357b7",
+				"dweb:/ipfs/QmVxbe7Bo1eVoFVczfJh3GJYGjCTFnAJGBA9x9J2AQgkvn"
 			]
 		}
 	},
